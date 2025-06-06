@@ -40,3 +40,22 @@ class MusicPlayer():
         playbtn = Button(buttonframe,text="UNPAUSE",command=self.unpausesong,width=10,height=1,font=("times new roman",16,"bold"),fg="navyblue",bg="pink").grid(row=0,column=2,padx=10,pady=5)
         # Inserting Stop Button
         playbtn = Button(buttonframe,text="STOPSONG",command=self.stopsong,width=10,height=1,font=("times new roman",16,"bold"),fg="navyblue",bg="pink").grid(row=0,column=3,padx=10,pady=5)
+
+        # Creating Playlist Frame
+        songsframe = LabelFrame(self.root,text="Song Playlist",font=("times new roman",15,"bold"),bg="grey",fg="white",bd=5,relief=GROOVE)
+        songsframe.place(x=600,y=0,width=400,height=200)
+        # Inserting scrollbar
+        scrol_y = Scrollbar(songsframe,orient=VERTICAL)
+        # Inserting Playlist listbox
+        self.playlist = Listbox(songsframe,yscrollcommand=scrol_y.set,selectbackground="gold",selectmode=SINGLE,font=("times new roman",12,"bold"),bg="silver",fg="navyblue",bd=5,relief=GROOVE)
+        # Applying Scrollbar to listbox
+        scrol_y.pack(side=RIGHT,fill=Y)
+        scrol_y.config(command=self.playlist.yview)
+        self.playlist.pack(fill=BOTH)
+        # Changing Directory for fetching Songs
+        os.chdir("PATH/OF/DIRECTORY")
+        # Fetching Songs
+        songtracks = os.listdir()
+        # Inserting Songs into Playlist
+        for track in songtracks:
+            self.playlist.insert(END,track)
