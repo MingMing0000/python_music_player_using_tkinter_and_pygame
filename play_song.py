@@ -5,4 +5,7 @@ from music_player import MusicPlayer
 
 # create a class PlaySong that inherits from the class MusicPlayer
 class PlaySong(MusicPlayer):
-    pass
+    
+    def set_status(self):
+        # Displaying Status
+        self.status.set("-Playing")
