@@ -25,6 +25,9 @@ class MusicPlayer():
         self.track = StringVar()
         # Declaring Status Variable
         self.status = StringVar()
+        self.folder_path = filedialog.askdirectory(title="Select a folder")
+        if self.folder_path:
+            os.chdir(self.folder_path)
 
         # Creating the Track Frames for Song label & status label
         track_frame = LabelFrame(self.root,text="Song Track",font=("times new roman",15,"bold"),bg="Navyblue",fg="white",bd=5,relief=GROOVE)
@@ -57,12 +60,6 @@ class MusicPlayer():
         scroll_y.pack(side=RIGHT,fill=Y)
         scroll_y.config(command=self.playlist.yview)
         self.playlist.pack(fill=BOTH)
-        # Changing Directory for fetching Songs
-        self.folder_path = filedialog.askdirectory(title="Select a folder")
-        if self.folder_path:
-            os.chdir(self.folder_path)
-        select_folder = Button(songs_frame, text="Select Folder", command=self.folder_path, width=10, height=1, font=("times new roman", 16, "bold"), fg="navyblue", bg="pink")
-        select_folder.pack(pady=10)
         # Fetching Songs
         song_tracks = os.listdir()
         # Inserting Songs into Playlist
