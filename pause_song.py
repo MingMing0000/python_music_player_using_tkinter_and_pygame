@@ -5,4 +5,6 @@ from tkinter import *
 
 # create a class PauseSong that inherits from the class MusicControls
 class PauseSong(MusicControls):    
-    pass
+    
+    def set_status(self):
+        self.status.set("-Paused")
