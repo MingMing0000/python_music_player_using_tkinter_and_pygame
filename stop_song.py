@@ -8,3 +8,6 @@ class StopSong(MusicControls):
     
     def set_status(self):
         self.status.set("-Stopped")
+    
+    def stop_song(self):
+        pygame.mixer.music.stop()
