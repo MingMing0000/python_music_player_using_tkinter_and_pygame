@@ -2,6 +2,10 @@
 from tkinter import *
 import pygame
 import os
+from play_song import PlaySong
+from stop_song import StopSong
+from pause_song import PauseSong
+from unpause_song import UnpauseSong
 
 # Create MusicPlayer Class
 class MusicPlayer():
@@ -59,3 +63,23 @@ class MusicPlayer():
         # Inserting Songs into Playlist
         for track in songtracks:
             self.playlist.insert(END,track)
+
+    def play_song(self):
+        play_song = PlaySong(self)
+        play_song.set_status()
+        play_song.play_song()
+        
+    def stop_song(self):
+        stop_song = PlaySong(self)
+        stop_song.set_status()
+        stop_song.play_song()
+    
+    def pause_song(self):
+        pause_song = PlaySong(self)
+        pause_song.set_status()
+        pause_song.play_song()
+
+    def unpause_song(self):
+        unpause_song = PlaySong(self)
+        unpause_song.set_status()
+        unpause_song.play_song()
