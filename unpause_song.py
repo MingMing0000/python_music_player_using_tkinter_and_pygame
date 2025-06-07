@@ -9,3 +9,7 @@ class UnpauseSong(MusicControls):
     def set_status(self):
         # It will Display the  Status
         self.status.set("-Playing")
+
+    def unpause_song(self):
+        # Playing back Song
+        pygame.mixer.music.unpause()
