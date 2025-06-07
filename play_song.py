@@ -1,10 +1,12 @@
 # import the needed files
 import pygame
 from tkinter import *
-from music_player import MusicPlayer
+from music_controls import MusicControls
 
 # create a class PlaySong that inherits from the class MusicPlayer
-class PlaySong(MusicPlayer):
+class PlaySong(MusicControls):
+    def __init__(self, player):
+        self.player = player
     
     def set_status(self):
         # Displaying Status
@@ -12,8 +14,8 @@ class PlaySong(MusicPlayer):
 
     def play_song(self):
         # Displaying Selected Song title
-        self.track.set(self.playlist.get(ACTIVE))
+        self.track.set(self.player.playlist.get(ACTIVE))
         # Loading Selected Song
-        pygame.mixer.music.load(self.playlist.get(ACTIVE))
+        pygame.mixer.music.load(self.player.playlist.get(ACTIVE))
         # Playing Selected Song
         pygame.mixer.music.play()
