@@ -25,9 +25,9 @@ class MusicPlayer():
         self.track = StringVar()
         # Declaring Status Variable
         self.status = StringVar()
-        self.folder_path = filedialog.askdirectory(title="Select a folder")
-        if self.folder_path:
-            os.chdir(self.folder_path)
+        self.__folder_path = filedialog.askdirectory(title="Select a folder")
+        if self.__folder_path:
+            os.chdir(self.__folder_path)
 
         # Creating the Track Frames for Song label & status label
         track_frame = LabelFrame(self.root,text="Song Track",font=("times new roman",15,"bold"),bg="Navyblue",fg="white",bd=5,relief=GROOVE)
