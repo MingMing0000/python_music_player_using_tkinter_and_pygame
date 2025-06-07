@@ -8,3 +8,7 @@ class PauseSong(MusicControls):
     
     def set_status(self):
         self.status.set("-Paused")
+
+    def pause_song(self):
+        # Paused Song
+        pygame.mixer.music.pause()
