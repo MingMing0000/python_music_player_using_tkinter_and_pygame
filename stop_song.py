@@ -5,6 +5,9 @@ from tkinter import *
 
 # create a class StopSong that inherits from the class MusicControls
 class StopSong(MusicControls):
+    def __init__(self, player):
+        self.player = player
+        self.status = player.status
     
     def set_status(self):
         self.status.set("-Stopped")

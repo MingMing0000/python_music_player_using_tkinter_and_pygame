@@ -7,6 +7,7 @@ from music_controls import MusicControls
 class PlaySong(MusicControls):
     def __init__(self, player):
         self.player = player
+        self.status = player.status
     
     def set_status(self):
         # Displaying Status
