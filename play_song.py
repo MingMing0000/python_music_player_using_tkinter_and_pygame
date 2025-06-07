@@ -10,7 +10,7 @@ class PlaySong(MusicControls):
         self.status = player.status
         self.track = player.track
     
-    def set_status(self):
+    def _MusicControls__set_status(self):
         # Displaying Status
         self.status.set("-Playing")
 

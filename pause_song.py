@@ -9,7 +9,7 @@ class PauseSong(MusicControls):
         self.player = player
         self.status = player.status    
     
-    def set_status(self):
+    def _MusicControls__set_status(self):
         self.status.set("-Paused")
 
     def pause_song(self):

@@ -9,7 +9,7 @@ class UnpauseSong(MusicControls):
         self.player = player
         self.status = player.status
     
-    def set_status(self):
+    def _MusicControls__set_status(self):
         # It will Display the  Status
         self.status.set("-Playing")
 

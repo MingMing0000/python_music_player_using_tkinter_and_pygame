@@ -68,20 +68,20 @@ class MusicPlayer():
 
     def play_song(self):
         play_song = PlaySong(self)
-        play_song.set_status()
+        play_song._MusicControls__set_status()
         play_song.play_song()
         
     def stop_song(self):
         stop_song = StopSong(self)
-        stop_song.set_status()
+        stop_song._MusicControls__set_status()
         stop_song.stop_song()
     
     def pause_song(self):
         pause_song = PauseSong(self)
-        pause_song.set_status()
+        pause_song._MusicControls__set_status()
         pause_song.pause_song()
 
     def unpause_song(self):
         unpause_song = UnpauseSong(self)
-        unpause_song.set_status()
+        unpause_song._MusicControls__set_status()
         unpause_song.unpause_song()
