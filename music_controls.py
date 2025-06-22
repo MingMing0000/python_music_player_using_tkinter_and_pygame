@@ -5,5 +5,5 @@ from abc import ABC, abstractmethod
 class MusicControls(ABC):
     
     @abstractmethod
-    def __set_status(self):
+    def set_status(self):
         pass

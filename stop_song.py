@@ -7,10 +7,10 @@ from tkinter import *
 class StopSong(MusicControls):
     def __init__(self, player):
         self.player = player
-        self.status = player.status
+        self.__status = player.status
     
-    def _MusicControls__set_status(self):
-        self.status.set("-Stopped")
+    def set_status(self):
+        self.__status.set("-Stopped")
     
     def stop_song(self):
         pygame.mixer.music.stop()

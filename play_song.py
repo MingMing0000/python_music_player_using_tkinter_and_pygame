@@ -7,12 +7,12 @@ from music_controls import MusicControls
 class PlaySong(MusicControls):
     def __init__(self, player):
         self.player = player
-        self.status = player.status
+        self.__status = player.status
         self.track = player.track
     
-    def _MusicControls__set_status(self):
+    def set_status(self):
         # Displaying Status
-        self.status.set("-Playing")
+        self.__status.set("-Playing")
 
     def play_song(self):
         # Displaying Selected Song title

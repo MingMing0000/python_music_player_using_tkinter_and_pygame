@@ -7,10 +7,10 @@ from tkinter import *
 class PauseSong(MusicControls):
     def __init__(self, player):
         self.player = player
-        self.status = player.status    
+        self.__status = player.status    
     
-    def _MusicControls__set_status(self):
-        self.status.set("-Paused")
+    def set_status(self):
+        self.__status.set("-Paused")
 
     def pause_song(self):
         # Paused Song

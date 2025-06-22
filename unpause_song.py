@@ -7,11 +7,11 @@ from tkinter import *
 class UnpauseSong(MusicControls):
     def __init__(self, player):
         self.player = player
-        self.status = player.status
+        self.__status = player.status
     
-    def _MusicControls__set_status(self):
+    def set_status(self):
         # It will Display the  Status
-        self.status.set("-Playing")
+        self.__status.set("-Playing")
 
     def unpause_song(self):
         # Playing back Song
